@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -15,7 +14,7 @@ import org.jsoup.select.Elements;
 /**
  * Created by aterner on 8/23/2017.
  */
-public class OnePageReviewParser implements Review {
+public class OnePageReviewParser implements ReviewParser {
 
     private static final String REVIEW = ".review";
 

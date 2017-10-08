@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by aterner on 8/23/2017.
  */
-public interface Review {
+public interface ReviewParser {
 
     List<CustomerReview> getReviews();
 }

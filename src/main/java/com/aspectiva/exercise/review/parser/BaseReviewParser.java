@@ -22,10 +22,7 @@ import org.jsoup.select.Elements;
 /**
  * Created by aterner on 8/23/2017.
  */
-public class ParallelReviewParser implements Review {
-
-    private static final String PREFIX_PRODUCT_REVIEW = "http://www.amazon.com/product-reviews/";
-    private static final String SUFFIX_PRODUCT_REVIEW = "/?showViewpoints=0&sortBy=byRankDescending&pageNumber=";
+public abstract class BaseReviewParser implements ReviewParser {
 
     private final static int NUM_THREADS = 5;
 
@@ -35,7 +32,7 @@ public class ParallelReviewParser implements Review {
     private ExecutorService executorService;
     private int totalPages;
 
-    public ParallelReviewParser(String asin) throws IOException{
+    public BaseReviewParser(String asin) throws IOException{
         this.asin = asin;
         this.executorService = Executors.newFixedThreadPool(NUM_THREADS);
         this.queue = new LinkedBlockingQueue();
@@ -43,11 +40,7 @@ public class ParallelReviewParser implements Review {
         calculateNumPages();
     }
 
-    private String getPageUrl(int pageNumber){
-        return PREFIX_PRODUCT_REVIEW
-               + asin +
-               SUFFIX_PRODUCT_REVIEW + pageNumber;
-    }
+    protected abstract String getPageUrl(int pageNumber);
 
     private void connect(String pageReviewUrl) throws IOException {
         this.document = Jsoup.connect(pageReviewUrl).get();
@@ -66,6 +59,9 @@ public class ParallelReviewParser implements Review {
             this.totalPages = Collections.max(pagenum);
             System.out.println("Num Pages: " + totalPages);
         }
+
+//        String numReviews = document.select("span[class=]").text();
+//        System.out.println("Num Reviews: " + numReviews);
     }
 
 
@@ -95,5 +91,9 @@ public class ParallelReviewParser implements Review {
 
         executorService.shutdown();
         return  customerReviews;
+    }
+
+    public String getAsin() {
+        return asin;
     }
 }

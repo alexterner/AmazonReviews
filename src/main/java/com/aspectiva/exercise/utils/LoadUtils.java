@@ -24,6 +24,7 @@ public enum LoadUtils {
         while( retry <= MAX_LOAD_RETRY){
             try {
                 document = Jsoup.connect(url)
+                        .userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0")
                         .timeout((int) TimeUnit.SECONDS.toMillis(DEFAULT_TIMEOUT))
                         .get();
                 break;

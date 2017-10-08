@@ -1,8 +1,7 @@
 package com.aspectiva.exercise.page.parser;
 
 import com.aspectiva.exercise.review.parser.CustomerReview;
-import com.aspectiva.exercise.review.parser.ParallelReviewParser;
-import com.aspectiva.exercise.utils.AsinUtils;
+import com.aspectiva.exercise.review.parser.ReviewParser;
 import com.aspectiva.exercise.utils.ElementUtils;
 import com.aspectiva.exercise.utils.LoadUtils;
 import java.io.IOException;
@@ -13,19 +12,16 @@ import org.jsoup.nodes.Document;
 /**
  * Created by aterner on 8/23/2017.
  */
-public class WebPageParser implements PageParser {
+public abstract class BaseCrawler implements Crawler {
 
 
     private Document document;
-    private ParallelReviewParser reviewParser;
-    private String asin;
+    private ReviewParser reviewParserParser;
 
-    public WebPageParser(String url) throws IOException {
+    public BaseCrawler(String url, ReviewParser reviewParserParser) throws IOException {
         Validate.notNull(url);
-
         document = LoadUtils.loadWithRetry(url);
-        this.asin = AsinUtils.fromUrl(url);
-        this.reviewParser = new ParallelReviewParser(asin);
+        this.reviewParserParser = reviewParserParser;
     }
 
     public String getItemName() {
@@ -37,7 +33,7 @@ public class WebPageParser implements PageParser {
     }
 
     public List<CustomerReview> getReviews() throws IOException {
-        return reviewParser.getReviews();
+        return reviewParserParser.getReviews();
     }
 
 }
