@@ -1,0 +1,17 @@
+com\aspectiva\exercise\page\parser\Crawler.class
+com\aspectiva\exercise\ReviewReport.class
+com\aspectiva\exercise\ReviewReport$ReviewReportBuilder.class
+com\aspectiva\exercise\review\parser\BaseReviewParser.class
+com\aspectiva\exercise\review\parser\parallel\Consumer.class
+com\aspectiva\exercise\review\parser\ReviewParser.class
+com\aspectiva\exercise\review\parser\AmazonReviewParser.class
+com\aspectiva\exercise\page\parser\AmazonCrawler.class
+com\aspectiva\exercise\utils\LoadUtils.class
+com\aspectiva\exercise\review\parser\parallel\Producer.class
+com\aspectiva\exercise\review\parser\CustomerReview.class
+com\aspectiva\exercise\review\parser\OnePageReviewParser.class
+com\aspectiva\exercise\utils\AsinUtils.class
+com\aspectiva\exercise\page\parser\BaseCrawler.class
+com\aspectiva\exercise\App.class
+com\aspectiva\exercise\CrawlerReport.class
+com\aspectiva\exercise\utils\ElementUtils.class

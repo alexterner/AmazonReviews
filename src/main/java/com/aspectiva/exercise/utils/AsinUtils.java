@@ -2,7 +2,6 @@ package com.aspectiva.exercise.utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * Created by aterner on 8/24/2017.
@@ -15,7 +14,7 @@ public enum AsinUtils {
 
     
     public static String fromUrl(String url){
-        if(StringUtils.isBlank(url)){
+        if(url == null){
            return "";
         }
 

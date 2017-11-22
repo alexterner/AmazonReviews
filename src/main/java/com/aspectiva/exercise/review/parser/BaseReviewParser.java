@@ -14,6 +14,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.IntStream;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -47,6 +49,14 @@ public abstract class BaseReviewParser implements ReviewParser {
     }
 
     private void calculateNumPages() {
+     /*   Element totalReviewCountElement = document.select("totalReviewCount").first();
+        if (totalReviewCountElement != null) {
+            String totalReviewCountStr = totalReviewCountElement.text();
+            System.out.println("Num Pages: " + totalReviewCountStr);
+            this.totalPages =  Integer.parseInt(totalReviewCountStr);
+        }
+        this.totalPages = 0;
+*/
         Elements pagelinks = document.select("a[href*=pageNumber=]");
         if (pagelinks.size() != 0) {
             ArrayList<Integer> pagenum = new ArrayList<Integer>();

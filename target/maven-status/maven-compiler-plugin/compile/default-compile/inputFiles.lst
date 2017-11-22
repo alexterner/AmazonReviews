@@ -1,0 +1,16 @@
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\ReviewReport.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\App.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\review\parser\BaseReviewParser.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\review\parser\AmazonReviewParser.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\review\parser\parallel\Consumer.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\utils\ElementUtils.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\utils\LoadUtils.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\page\parser\AmazonCrawler.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\page\parser\BaseCrawler.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\page\parser\Crawler.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\review\parser\ReviewParser.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\review\parser\CustomerReview.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\CrawlerReport.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\utils\AsinUtils.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\review\parser\OnePageReviewParser.java
+C:\gitRepository\gitHub\AmazonReviews\src\main\java\com\aspectiva\exercise\review\parser\parallel\Producer.java

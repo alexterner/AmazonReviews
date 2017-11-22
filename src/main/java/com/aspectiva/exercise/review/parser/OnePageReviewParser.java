@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -59,31 +60,31 @@ public class OnePageReviewParser implements ReviewParser {
                 CustomerReview customerReview = new CustomerReview();
 
                 String title = ElementUtils.getTitle(reviewElement);
-                if (StringUtils.isNoneBlank( title) ) {
+                if (StringUtils.isNotBlank(title) ) {
 //                    System.out.println("Title: " + title);
                     customerReview.setTitle(title);
                 }
 
                 String author = ElementUtils.getAuthor(reviewElement);
-                if (StringUtils.isNoneBlank( author) ) {
+                if (StringUtils.isNotBlank( author) ) {
 //                    System.out.println("Author: " + author);
                     customerReview.setUser(author);
                 }
 
                 String text = ElementUtils.getText(reviewElement);
-                if (StringUtils.isNoneBlank( text) ) {
+                if (StringUtils.isNotBlank( text) ) {
 //                    System.out.println("Text: " + text);
                     customerReview.setText(text);
                 }
 
                 String rating = ElementUtils.getRating(reviewElement);
-                if(StringUtils.isNoneBlank(rating)){
+                if(StringUtils.isNotBlank(rating)){
 //                    System.out.println("Rating: " + rating);
                     customerReview.setRating(rating);
                 }
 
                 String date = ElementUtils.getDate(reviewElement);
-                if(StringUtils.isNoneBlank(date)){
+                if(StringUtils.isNotBlank(date)){
 //                    System.out.println("Date: " + date);
                     customerReview.setDate(date);
                 }
